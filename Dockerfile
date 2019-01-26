@@ -3,8 +3,8 @@
 #   - https://hub.docker.com/r/nuntz/telegraf-snmp/
 FROM telegraf
 
-RUN apt update
-RUN apt -y install curl snmp snmpd snmp-mibs-downloader nodejs nodejs-legacy npm
+RUN apt-get update
+RUN apt-get -y install curl snmp snmpd nodejs nodejs-legacy npm
 RUN echo node -v
 RUN echo npm -v
 RUN rm -r /var/lib/apt/lists/*
