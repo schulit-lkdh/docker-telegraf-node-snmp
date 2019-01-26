@@ -4,9 +4,8 @@
 FROM telegraf
 
 RUN apt-get update
-RUN apt-get -y install curl snmp snmpd nodejs nodejs-legacy npm
-RUN echo node -v
-RUN echo npm -v
+RUN apt-get -y install curl snmp snmpd build-essential libssl-dev
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN rm -r /var/lib/apt/lists/*
 
 EXPOSE 8125/udp 8092/udp 8094
